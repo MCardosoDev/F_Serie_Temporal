@@ -1,0 +1,46 @@
+# Série temporal
+### Modelos avaliados com base de dados climáticos de da India, 2014 à 2017 na cidade de Delhi.
+### Objetivo acessa  o dataset e analisar todos os componentes de séries temporais, mostrando sua tendencia, sazonalidade e ruídos.
+
+- pandas
+- numpy
+- matplotlib.pyplot
+- seaborn
+- statsmodels.tsa.seasonal
+  - seasonal_decompose
+- statsmodels.tsa.stattools
+  - adfuller
+- statsmodels.tsa.stattools
+  - acf
+  - pacf
+- statsmodels.graphics.tsaplots
+  - plot_acf, plot_pacf
+- statsforecast
+  - StatsForecast
+- statsforecast.models
+  - Naive
+  - SeasonalNaive
+  - SeasonalWindowAverage
+  - WindowAverage
+  - RandomWalkWithDrift
+  - HistoricAverage
+  - AutoARIMA
+  - AutoETS
+  - AutoCES
+  - AutoTheta
+  - SimpleExponentialSmoothing
+  - SimpleExponentialSmoothingOptimized
+  - SeasonalExponentialSmoothing
+  - SeasonalExponentialSmoothingOptimized
+  - Holt
+  - HoltWinters
+  - ADIDA
+  - CrostonClassic
+  - CrostonOptimized
+  - CrostonSBA
+  - IMAPA
+  - TSB
+  - MSTL
+  - DynamicOptimizedTheta
+  - GARCH
+  - ARCH
