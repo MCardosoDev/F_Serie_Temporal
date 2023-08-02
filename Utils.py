@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
+import numpy as np
 from statsmodels.tsa.seasonal import seasonal_decompose
-from statsmodels.tsa.stattools import adfuller, acf, pacf
+from statsmodels.tsa.stattools import adfuller
+from statsmodels.tsa.stattools import acf, pacf
 
 def plot_ts(df):
     plt.figure(figsize=(16, 8))
@@ -51,3 +53,21 @@ def augmented_dickey_fuller(df):
 
     for key, value in result[4].items(): #type: ignore
         print(f'\t{key}: {value}')
+
+def wmap_error(y_true, y_pred):
+    return np.abs(y_true - y_pred).sum() / np.abs(y_true).sum()
+
+def rmse_error(y_true, y_pred):
+    return np.sqrt(((y_true - y_pred) ** 2).mean())
+
+def mae_error(y_true, y_pred):
+    return np.abs(y_true - y_pred).mean()
+
+def mse_error(y_true, y_pred):
+    return ((y_true - y_pred) ** 2).mean()
+
+def autocorrelation_function(df, lag):
+    return acf(df.dropna(), nlags=lag)
+
+def partial_autocorrelation_function(df, lag):
+    return pacf(df.dropna(), nlags=lag)
